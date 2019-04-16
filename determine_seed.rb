@@ -41,6 +41,9 @@ def step_back(seed, amt)
 end
 
 
+# The external program expects the human to type in a sequence of 
+# integers from the standard inputs.  This method converts the 
+# target password to the sequence of integers and pipes them through.
 def get_seed(modulus, target)
   cmd = "javacg -n #{target.size} -l #{modulus}"
 
@@ -63,6 +66,7 @@ def get_seed(modulus, target)
 end
 
 
+# A simple helper method to convert a password character to integer.
 def target_to_int(alphabet, target)
   target.split(//).map { |ch| 
     v = alphabet.index(ch)
