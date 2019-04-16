@@ -14,21 +14,32 @@ public class generate_password
 { 
     public static void main(String args[]) 
     { 
-	char[] chars = args[0].toCharArray();
-	int chars_len = chars.length;
-	long seed = Long.parseLong(args[1]);
-	int len = Integer.parseInt(args[2]);
-	String ans = "";
+        char[] chars;
+        long seed;
+        int chars_len, bytes;
+        String ans = "";
+
+        if (args.length != 3) {
+            System.out.println("Pass in three argumnets for the alphabet, password and length");
+            System.out.println("i.e.");
+            System.out.println("java generate_password ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 89560454678953 35");
+            System.exit(0);
+        }
+
+        chars = args[0].toCharArray();
+        chars_len = chars.length;
+        seed = Long.parseLong(args[1]);
+        bytes = Integer.parseInt(args[2]);
 
         // Create instance of Random class.
         Random rnd = new Random(seed); 
 
-	// Generate the password.
-        for (int i = 0; i < len; i++) {
+        // Generate the password.
+        for (int i = 0; i < bytes; i++) {
             ans += chars[rnd.nextInt(chars_len)];
         }
 
-	System.out.println(ans);
+        System.out.println(ans);
     }
 }
 
