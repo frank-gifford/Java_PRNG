@@ -1,6 +1,9 @@
 # Java_PRNG
 Helper code to find and confirm the Java PRNG seed used for passwords.
 
+The related blog post can be found here:
+https://www.nccgroup.trust/us/about-us/newsroom-and-events/blog/2019/may/the-35-character-weak-password/
+
 These should work with basic Java and Ruby.  I've tried to use simple
 constructs which could lend themselves to be moved into another program.
 I've also avoided trying to make the programs too terse and opting for
